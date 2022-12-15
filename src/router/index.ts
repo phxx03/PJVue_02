@@ -4,112 +4,61 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/dashboard'
+    name: 'employeepage',
+    // redirect: '/employeepage'
+    // path: 'employeepage',
+    component: () => import('@/views/EMPage.vue')
   },
   {
-    path: '/car',
-    name: 'carRental',
-    component: () => import("@/views/CarRental.vue")
+    path: '/cast',
+    name: 'cast',
+    component: () => import("@/views/CastPD.vue")
   },
   {
-    path: '/selectcar',
-    name: 'selectcar',
-    component: () => import("@/views/selectcar.vue")
+    path: '/Product-List',
+    name: 'Product-List',
+    component: () => import("@/views/PDlist.vue")
   },
   {
-    path: '/detailcar',
-    name: 'detailcar',
-    component: () => import("@/views/detailcar.vue")
+    path: '/history',
+    name: 'history',
+    component: () => import("@/views/History.vue")
   },
   {
-    path: '/cartedit',
-    name: 'cartedit',
-    component: () => import("@/views/cartedit.vue")
+    path: '/edit-product',
+    name: 'edit-product',
+    component: () => import("@/views/EditPD.vue")
   },
   {
-    path: '/cartdialog',
-    name: 'cartdialog',
-    component: () => import("@/views/cartdialog.vue")
+    path: '/edit-employee',
+    name: 'edit-employee',
+    component: () => import("@/views/EditEM.vue")
   },
   {
-    path: '/cartcheckout',
-    name: 'cartCheckOut',
-    component: () => import("@/views/CartCheckOut.vue")
+    path: '/edit-Product-Detail',
+    name: 'edit-Product-Detail',
+    component: () => import("@/views/EditPDDetail.vue")
   },
   {
-    path: '/air-ticket',
-    name: 'Air-ticket',
-    component: () => import("@/views/Air-ticket.vue")
-  },
-  
-  {
-    path: '/air-oneway-ticket',
-    name: 'Air-oneway-ticket',
-    component: () => import("@/views/Air-oneway-ticket.vue")
+    path: '/edit-Employee-Detail',
+    name: 'edit-Employee-Detail',
+    component: () => import("@/views/EditEMDetail.vue")
   },
   {
-    path: '/air-oneway-payment',
-    name: 'Air-oneway-payment',
-    component: () => import("@/views/Air-oneway-payment.vue")
+    path: '/Cart-Bill',
+    name: 'Cart-Bill',
+    component: () => import("@/views/CartBill.vue")
   },
   {
-    path: '/air-twoway-out',
-    name: 'Air-twoway-ticket',
-    component: () => import("@/views/Air-twoway-out.vue")
+    path: '/Export',
+    name: 'Export',
+    component: () => import("@/views/Export.vue")
   },
   {
-    path: '/air-twoway-in',
-    name: 'Air-twoway-in',
-    component: () => import("@/views/Air-twoway-in.vue")
+    path: '/Export-Detail',
+    name: 'Export-Detail',
+    component: () => import("@/views/ExportDetail.vue")
   },
-  {
-    path: '/detailtour',
-    name: 'Detailtour',
-    component: () => import("@/views/Detailtour.vue")
-  },
-  {
-    path: '/selecttour',
-    name: 'Selecttour',
-    component: () => import("@/views/Selecttour.vue")
-  },
-  {
-    path: '/hotelbooking',
-    name: 'hotelbooking',
-    component: () => import("@/views/hotelBooking.vue")
-  },
-  {
-    path: '/selecthotel',
-    name: 'Selecthotel',
-    component: () => import("@/views/Selecthotel.vue")
-  },
-  {
-    path: '/selectroom',
-    name: 'Selectroom',
-    component: () => import("@/views/Selectroom.vue")
-  },
-  {
-    path: '/tabs/',
-    component: () => import("@/views/tab.vue"),
-    children: [
-      {
-        path: 'dashboard',
-        component: () => import('@/views/Dashboard.vue')
-      },
-      {
-        path: 'deal',
-        component: () => import('@/views/deal.vue')
-      },
-      {
-        path: 'booking',
-        component: () => import('@/views/booking.vue')
-      },
-      
-      {
-        path: 'account',
-        component: () => import('@/views/Account.vue')
-      }
-    ]
-  }
 ]
 
 const router = createRouter({

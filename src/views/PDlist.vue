@@ -1,20 +1,21 @@
 <template>
     <ion-page>
         <ion-header mode="ios">
-            <ion-toolbar color="danger">
+            <ion-toolbar color="secondary">
                 <ion-buttons slot="start">
                     <ion-back-button text=""></ion-back-button>
                 </ion-buttons>
-                <ion-title>Select Flight (Outbound)</ion-title>
+                <ion-title>รายการสินค้า</ion-title>
             </ion-toolbar>
         </ion-header>
 
         <ion-content>
+            <ion-searchbar mode="ios" placeholder="ค้นหาสินค้า"></ion-searchbar>
             <ion-card>
                 <ion-card-content color="tertiary">
                     <div class="ion-no-margin">
                         <ion-card color="tertiary" class="ion-no-padding border-radius">
-                            <ion-row style="border-bottom: 1px solid #e0e0e0;">
+                            <!-- <ion-row style="border-bottom: 1px solid #e0e0e0;">
                                 <ion-col>
                                     <ion-select okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet"
                                         placeholder="สายการบิน" mode="ios">
@@ -47,23 +48,23 @@
                                         <ion-select-option value="to">เวลาถึง</ion-select-option>
                                     </ion-select>
                                 </ion-col>
-                            </ion-row>
-                            <ion-list-header lines="none" mode="md" color="tertiary">
+                            </ion-row> -->
+                            <!-- <ion-list-header lines="none" mode="md" color="tertiary">
                                 <ion-label>เลือกรายการ</ion-label>
-                            </ion-list-header>
+                            </ion-list-header> -->
                             <ion-item button class="ion-margin-bottom" color="tertiary" lines="full"
-                                v-for="ticket in tlist" :key="ticket.go" routerLink="/air-oneway-payment">
+                                v-for="ticket in tlist" :key="ticket.go">
                                 <ion-avatar slot="start">
-                                    <ion-img :src="ticket.img"></ion-img>
+                                    <ion-img :src="ticket.img" height='60' width='120'></ion-img>
                                 </ion-avatar>
                                 <ion-label>
-                                    <b> {{ ticket.go }} > {{ ticket.to }} </b>
+                                    <b> {{ ticket.go }}</b>
                                     <ion-text color="medium">
-                                        <h3>{{ ticket.gtime }}>{{ ticket.ttime }} {{ ticket.time }}</h3>
+                                        <h3>{{ ticket.gtime }}</h3>
                                     </ion-text>
                                 </ion-label>
-                                <ion-label slot="end" color="danger">
-                                    <ion-text> {{ ticket.price }} </ion-text>
+                                <ion-label slot="end">
+                                    <ion-text> เหลือ {{ ticket.price }} </ion-text>
                                 </ion-label>
                             </ion-item>
                         </ion-card>
@@ -112,14 +113,14 @@ export default defineComponent({
         IonCard,
         IonCardContent,
         IonItem,
-        IonSelect,
+        // IonSelect,
         IonLabel,
         IonAvatar,
         IonImg,
-        IonRow,
-        IonCol,
-        IonSelectOption,
-        IonListHeader,
+        // IonRow,
+        // IonCol,
+        // IonSelectOption,
+        // IonListHeader,
         IonText
     },
     data() {

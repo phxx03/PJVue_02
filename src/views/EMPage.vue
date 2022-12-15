@@ -1,81 +1,51 @@
 <template>
   <ion-page>
     <ion-header mode="ios">
-      <ion-toolbar color="danger">
-        <ion-title>Mana Dashboard
-          <ion-fab horizontal="end">
-            <ion-fab-button class="fab-small" size="small" id="alignment-button">
-              <ion-icon name="notifications"></ion-icon>
-            </ion-fab-button>
-            <ion-popover trigger="alignment-button" :dismissOnSelect="true">
-                <ion-content>
-                  <ion-list>
-                    <ion-item lines="full" :button="true" :detail="true" id="nested-trigger">
-                      <ion-label>การชำระเงินสำเร็จ</ion-label>
-                    </ion-item>
-                    <ion-popover trigger="nested-trigger" :dismissOnSelect="true" side="end">
-                    </ion-popover>
-                    <ion-item lines="none" :button="true" :detail="true" id="nested-trigger">
-                      <ion-label>คุณได้ทำการเช่ารถ</ion-label>
-                    </ion-item>
-                    <ion-popover trigger="nested-trigger" :dismissOnSelect="true" side="end">
-                    </ion-popover>
-                  </ion-list>
-                </ion-content>
-            </ion-popover>
-          </ion-fab>
-        </ion-title>
+      <ion-toolbar color="secondary">
+        <ion-title>โชคดีการเกษตร</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-grid class="mygrid" padding>
-        <ion-row class="myrow">
+        <!-- <ion-row class="myrow"> -->
           <ion-col class="mycols">
-            <div class="myBTNs4" @click="() => router.push('/car')">
-              <ion-icon class="largeIcon" name="car-sport" item-start></ion-icon>
-              <p class="myHeader">เช่ารถ</p>
+            <div class="myBTNs" @click="() => router.push('/cast')">
+              <ion-icon class="largeIcon" name="cash" item-start></ion-icon>
+              <p class="myHeader">คำนวน</p>
             </div>
           </ion-col>
-          <ion-col class="mycols1">
-            <div class="myBTNs3" @click="() => router.push('/Air-ticket')">
-              <ion-icon class="largeIcon" name="airplane" item-start></ion-icon>
-              <p class="myHeader">ตั๋วเครื่องบิน</p>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="myrow">
           <ion-col class="mycols">
-            <div class="myBTNs" @click="() => router.push('/selecttour')">
-              <ion-icon class="largeIcon" name="pricetag" item-start></ion-icon>
-              <p class="myHeader">แพคเก็ตทัวร์</p>
+            <div class="myBTNs1" @click="() => router.push('/Product-List')">
+              <ion-icon class="largeIcon" name="list" item-start></ion-icon>
+              <p class="myHeader">รายการสินค้า</p>
             </div>
           </ion-col>
-          <ion-col class="mycols1">
-            <div class="myBTNs1" @click="() => router.push('/hotelBooking')">
-              <ion-icon class="largeIcon" name="business" item-start></ion-icon>
-              <p class="myHeader">จองโรงแรม</p>
+          <ion-col class="mycols">
+            <div class="myBTNs" @click="() => router.push('/Export')">
+              <ion-icon class="largeIcon" name="albums" item-start></ion-icon>
+              <p class="myHeader">ตรวจสอบการจัดส่ง</p>
             </div>
           </ion-col>
-        </ion-row>
+          <ion-col class="mycols">
+            <div class="myBTNs1" @click="() => router.push('/history')">
+              <ion-icon class="largeIcon" name="time" item-start></ion-icon>
+              <p class="myHeader">รายการสั่งซื้อย้อนหลัง</p>
+            </div>
+          </ion-col>
+          <ion-col class="mycols">
+            <div class="myBTNs" @click="() => router.push('/edit-product')">
+              <ion-icon class="largeIcon" name="list" item-start></ion-icon>
+              <p class="myHeader">แก้ไขรายการสินค้า</p>
+            </div>
+          </ion-col>
+          <ion-col class="mycols">
+            <div class="myBTNs1" @click="() => router.push('/edit-employee')">
+              <ion-icon class="largeIcon" name="man" item-start></ion-icon>
+              <p class="myHeader">แก้ไขข้อมูลพนักงาน</p>
+            </div>
+          </ion-col>
       </ion-grid>
-
-      <ion-card>
-        <ion-card-content color="tertiary">
-          <ion-slides>
-            <ion-slide v-for="deal in promo" :key="deal.title">
-              <ion-card color="tertiary" class="border-radius cardpromo " @click="() => cautionAlert('Deal Page')">
-                <img class="imgpromo" style="height: 220px" v-bind:src="deal.img" />
-                <ion-card-header style="padding-top: 5px">
-                  <ion-card-subtitle style="font-size: 14px">
-                    {{ deal.content }}
-                  </ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
-        </ion-card-content>
-      </ion-card>
     </ion-content>
   </ion-page>
 </template>
@@ -112,26 +82,26 @@ import { Deal } from "../mocks/promotionDeal";
 export default defineComponent({
   name: "dashBoard",
   components: {
-    IonFabButton,
+    // IonFabButton,
     IonPage,
     IonHeader,
     IonContent,
     IonToolbar,
     IonGrid,
-    IonRow,
-    IonSlides,
-    IonSlide,
-    IonCard,
-    IonCardHeader,
-    IonCardContent,
-    IonCardSubtitle,
+    // IonRow,
+    // IonSlides,
+    // IonSlide,
+    // IonCard,
+    // IonCardHeader,
+    // IonCardContent,
+    // IonCardSubtitle,
     IonIcon,
-    IonPopover,
+    // IonPopover,
     IonTitle,
-    IonFab,
-    IonList,
-    IonItem,
-    IonLabel,
+    // IonFab,
+    // IonList,
+    // IonItem,
+    // IonLabel,
     IonCol
   },
   data() {
@@ -226,10 +196,10 @@ export default defineComponent({
 }
 
 .mygrid {
-  padding-top: 35px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding-top: 2px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  padding-left: 20px;
 }
 
 .myrow {
@@ -238,8 +208,9 @@ export default defineComponent({
 }
 
 .myBTNs {
-  background: #9e9e9e;
+  background: #388a1ca7;
   color: white;
+  height: 120px;
   margin: 1%;
   border-radius: 6px;
   box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
@@ -247,8 +218,19 @@ export default defineComponent({
 }
 
 .myBTNs4 {
-  background: #ec1c24;
+  background: #388a1ca7;
   color: white;
+  height: 120px;
+  margin: 1%;
+  border-radius: 6px;
+  box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
+  -webkit-box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
+}
+
+.myBTNs5 {
+  background: #388a1ca7;
+  color: white;
+  height: 120px;
   margin: 1%;
   border-radius: 6px;
   box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
@@ -256,40 +238,41 @@ export default defineComponent({
 }
 
 .largeIcon {
-  padding-top: 8%;
-  padding-left: 12px;
-  font-size: 25px;
+  padding-top: 3%;
+  padding-left: 8px;
+  font-size: 50px;
 }
 
 .myHeader {
   position: relative;
   position: relative;
-  margin-top: 7px;
-  font-size: 17px;
+  margin-top: 0.1px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
-  margin-left: 12px;
+  margin-bottom: 2px;
+  margin-left: 10px;
   padding-bottom: 22%;
   padding-top: 6px;
 }
 
 .myBTNs1 {
-  background: #ec1c24;
+  background: #325d26a7;
   color: white;
   position: relative;
-  left: 35px;
-  margin: 2px;
+  height: 120px;
+  margin: 1px;
   border-radius: 6px;
   box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
 }
 
 .myBTNs3 {
-  background: #9e9e9e;
+  background: #325d26a7;
   color: white;
+  height: 120px;
   position: relative;
-  left: 35px;
-  margin: 2px;
+  /* left: 35px; */
+  margin: 1px;
   border-radius: 6px;
   box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 4px 28px 2px rgba(0, 0, 0, 0.20);
